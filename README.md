@@ -6,7 +6,7 @@ A modern, animated **Tic-Tac-Toe** game built with **HTML, CSS, and JavaScript**
 
 ## 🔗 Live Preview  
 👉 **Play the game here:**  
-**hhttps://sans-algo.github.io/Tic-Tac-Toe/**  
+**https://sans-algo.github.io/Tic-Tac-Toe/**  
 
 ---
 

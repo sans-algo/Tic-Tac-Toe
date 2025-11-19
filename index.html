@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tic-Tac-Toe with Bets</title>
+  <link rel="stylesheet" href="./Styles/style.css">
+</head>
+
+<body>
+  <div class="app" role="application" aria-label="Tic Tac Toe with Bets">
+    <div class="controls">
+      <div class="header">
+        <h1>Tic-Tac-Toe — Bets</h1>
+        <p class="small">Local PvP or vs CPU. Place a bet per round — winner takes the pot.</p>
+      </div>
+
+      <div class="panel">
+        <div class="balances">
+          <div class="player-row">
+            <div class="player-id">
+              <div class="avatar">X</div>
+              <div class="meta">
+                <div class="name">Player X</div>
+                <div class="bal" id="balX">Balance: ₹1000</div>
+              </div>
+            </div>
+            <button class="btn secondary" id="renameX">Rename</button>
+          </div>
+
+          <div class="player-row">
+            <div class="player-id">
+              <div class="avatar o">O</div>
+              <div class="meta">
+                <div class="name" id="playerOname">Player O</div>
+                <div class="bal" id="balO">Balance: ₹1000</div>
+              </div>
+            </div>
+            <button class="btn secondary" id="renameO">Rename</button>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="panel-row">
+          <label class="small">Mode</label>
+          <div class="mode-row" role="radiogroup">
+            <button class="btn secondary mode active" data-mode="pvp">Local PvP</button>
+            <button class="btn secondary mode" data-mode="cpu">vs CPU (easy)</button>
+          </div>
+        </div>
+
+        <div class="panel-row">
+          <label class="small">Bet amount (₹)</label>
+          <div class="bet-row">
+            <input id="betInput" type="number" min="0" step="10" value="100" />
+            <button class="btn" id="setBet">Set Bet</button>
+          </div>
+          <div class="muted-small" id="potInfo">Current pot: ₹0 — both players must accept</div>
+        </div>
+
+        <div class="panel-row accept-row">
+          <div>
+            <button class="accept-btn not-accepted" id="acceptX">X Accept</button>
+            <span class="muted-small" id="acceptXstate">Not accepted</span>
+          </div>
+          <div>
+            <button class="accept-btn not-accepted" id="acceptO">O Accept</button>
+            <span class="muted-small" id="acceptOstate">Not accepted</span>
+          </div>
+        </div>
+
+        <div class="panel-actions">
+          <button class="btn" id="startRound">Start Round</button>
+          <button class="btn secondary" id="forfeit">Forfeit / Cancel</button>
+        </div>
+      </div>
+
+      <div class="panel history-panel">
+        <div class="small">History</div>
+        <div id="history" class="history"></div>
+      </div>
+
+      <footer>Balances stored in localStorage. Refresh retains state.</footer>
+    </div>
+
+    <div class="game-area">
+      <div class="status">
+        <div id="statusText">Waiting to start — set a bet and both players accept.</div>
+        <div id="roundPot" class="muted-small">Pot: ₹0</div>
+      </div>
+
+      <div class="board" id="board" aria-label="tic tac toe board">
+        <!-- 9 cells created by JS -->
+      </div>
+
+      <div class="controls-bottom">
+        <button class="btn secondary" id="undo">Undo</button>
+        <button class="btn secondary" id="resetBalances">Reset Balances</button>
+        <button class="btn" id="newGame">New Game</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./Scripts/script.js"></script>
+</body>
+
+</html>
